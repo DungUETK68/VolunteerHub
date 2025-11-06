@@ -1,0 +1,169 @@
+body {
+    background: #d6d6d6;
+    font-family: 'Nunito', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../images/background.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login-page, .register-page {
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.35); /* màu đen, độ mờ 35% */
+    z-index: 0;
+}
+
+.login-container,
+.register-container {
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+    padding: 32px 20px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-title {
+    color: #38b6ff;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1em;
+    margin-bottom: 7px;
+    margin-top: 7px;
+    font-weight: 600;
+}
+
+.role-label {
+    margin-top: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 90%;
+    padding: 13px 15px;
+    margin-bottom: 10px;
+    border: 1.5px solid #222;
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #38b6ff;
+}
+
+.role-selector {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.role-btn {
+    background: #d6d6d6;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 28px;
+    font-size: 1em;
+    font-weight: 600;
+    color: #222;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.role-btn.selected {
+    background: #38b6ff;
+    color: #fff;
+}
+
+.sign-in-btn {
+    background: #38b6ff;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 0;
+    font-size: 1.2em;
+    font-weight: 700;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.sign-in-btn:hover {
+    background: #249be0;
+}
+
+.create-account-btn {
+    background: #38b6ff;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 0;
+    font-size: 1.2em;
+    font-weight: 700;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.create-account-btn:hover {
+    background: #249be0;
+}
+
+.bottom-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.link {
+    color: #38b6ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
