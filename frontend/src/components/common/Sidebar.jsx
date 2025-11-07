@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import 'C:/Project/VolunteerHub/frontend/src/assets/styles/home.css';
+import '../../assets/styles/home.css';
 
 function Sidebar() {
   const navigate = useNavigate();

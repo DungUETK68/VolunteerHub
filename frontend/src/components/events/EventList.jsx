@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import "../../assets/styles/events.css";
-import Sidebar from "../../components/common/Sidebar";
 
-export default function EventsVolunteer() {
+function EventList() {
+  const navigate = useNavigate();
+  const handleDetail = () => {
+    navigate('/eventDetail');
+  }
   const [activeTab, setActiveTab] = useState("upcoming");
 
   const events = [
@@ -36,12 +40,9 @@ export default function EventsVolunteer() {
 
   return (
     <div className="events-container">
-      <Sidebar />
-
       <main className="main-content">
         <div className="events-header">
           <h2>Sự Kiện Tình Nguyện</h2>
-          <button className="add-event-btn">Thêm Sự Kiện Mới</button>
         </div>
 
         <div className="events-tabs">
@@ -73,7 +74,7 @@ export default function EventsVolunteer() {
               {filteredEvents.map((event) => (
                 <div key={event.id} className="event-card event-vol">
                   <div className="event-title-row">
-                    <a href="#" className="event-title">
+                    <a href="#" className="event-title" onClick={handleDetail}>
                       {event.title}
                     </a>
                     <span className="event-date">{event.date}</span>
@@ -98,3 +99,5 @@ export default function EventsVolunteer() {
     </div>
   );
 }
+
+export default EventList;

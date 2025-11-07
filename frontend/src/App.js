@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import Dashboard from './pages/volunteer/DashboardVolunteer';
-import EventsVolunteer from "./pages/volunteer/EventList";
+import EventsVolunteer from "./pages/volunteer/EventsVolunteer";
+import EventDetail from './pages/volunteer/EventDetail';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/events" element={<EventsVolunteer />} />
+        <Route path="/eventDetail" element={<EventDetail />} />
       </Routes>
     </Router>
   );
