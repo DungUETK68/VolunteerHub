@@ -62,7 +62,6 @@ export default function EventDetail() {
     <div className="page-wrapper">
       <Sidebar />
       <main className="content" role="main">
-        {/* Banner tĩnh */}
         <section className="event-banner">
           <div className="banner-header">
             <div className="banner-meta">
@@ -75,11 +74,7 @@ export default function EventDetail() {
               <div className="meta-location">Địa điểm: {eventInfo.location}</div>
             </div>
             <div className="banner-actions">
-              <button
-                className="share-btn"
-                type="button"
-                onClick={() => navigator.clipboard?.writeText(window.location.href)}
-              >
+              <button className="share-btn" type="button" onClick={() => navigator.clipboard?.writeText(window.location.href)}>
                 Chia sẻ
               </button>
             </div>
@@ -96,9 +91,7 @@ export default function EventDetail() {
           </div>
         </section>
 
-        <section style={{ width: '100%', maxWidth: 980 }}>
-          <NewPostForm onCreate={addPost} relatedTo={eventInfo.title} />
-        </section>
+        <NewPostForm onCreate={addPost} relatedTo={eventInfo.title} />
 
         {/* Danh sách các thảo luận liên quan tới banner */}
         <section className="posts-list" aria-live="polite">

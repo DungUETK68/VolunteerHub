@@ -1,17 +1,38 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../assets/styles/home.css';
+import { useAuth } from '../../contexts/AuthContext';
 
 function Sidebar() {
   const navigate = useNavigate();
+  const { user } = useAuth();
+  const role = user?.role || 'volunteer';
 
-  const handleDashboard = () => {
-    navigate('/dashboard');
-  }
+  const menus = {
+    volunteer: [
+      { key: 'dashboard', label: 'Dashboard', icon: '🏠', to: '/dashboard' },
+      { key: 'events', label: 'Sự kiện', icon: '📅', to: '/events' },
+      { key: 'my-events', label: 'Sự kiện của tôi', icon: '📋', to: '/history' },
+      { key: 'notifications', label: 'Thông báo', icon: '🔔', to: '/notification' },
+    ],
+    manager: [
+      { key: 'dashboard', label: 'Dashboard', icon: '🏠', to: '/dashboard' },
+      { key: 'events', label: 'Quản lý sự kiện', icon: '🛠️', to: '/manager/events' },
+      { key: 'accept', label: 'Duyệt thành viên', icon: '📅', to: '/accept' },
+      { key: 'VolunteerList', label: 'Danh sách tình nguyện viên', icon: '📋', to: '/volunteerList' },
+    ],
+    admin: [
+      { key: 'dashboard', label: 'Dashboard', icon: '🏠', to: '/dashboard' },
+      { key: 'events', label: 'Quản lý sự kiện', icon: '🛠️', to: '/admin/events' },
+      { key: 'user-management', label: 'Quản lý người dùng', icon: '👥', to: '/admin/users' },
+    ],
+  };
 
-  const handleEvents = () => {
-    navigate('/events')
-  }
+  const items = menus[role] || menus.volunteer;
+
+  const handleNavigate = (to) => {
+    navigate(to);
+  };
 
   return (
     <aside className="sidebar">
@@ -20,10 +41,12 @@ function Sidebar() {
       </div>
       <nav className="sidebar-nav">
         <ul id="sidebar-tabs">
-          <li className="dashboard-tab" onClick={handleDashboard}><span>🏠</span> Dashboard</li>
-          <li className="events-tab" onClick={handleEvents}><span>📅</span> Sự kiện</li>
-          <li className="my-events-tab"><span>📅</span> Sự kiện của tôi</li>
-          <li className="notifications-tab"><span>🔔</span> Thông báo</li>
+          {items.map((it) => (
+            <li key={it.key} onClick={() => handleNavigate(it.to)}>
+              <span style={{ marginRight: 8 }}>{it.icon}</span>
+              {it.label}
+            </li>
+          ))}
         </ul>
       </nav>
     </aside>

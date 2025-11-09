@@ -18,7 +18,7 @@ body {
     gap: 20px;
 }
 
-.event-banner {
+.event-banner, .posts-list, .new-post-form {
     width: 100%;
     max-width: 980px;
     background: #ffffff;
@@ -52,18 +52,10 @@ body {
     margin-top: 6px;
 }
 
-.posts-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    max-width: 980px;
-}
-
 .event-post {
     width: 100%;
-    max-width: 980px;
-    background: #ffffff;
+    max-width: 930px;
+    background: #eeeded;
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(23, 43, 77, 0.06);
     overflow: hidden;
@@ -184,10 +176,11 @@ body {
 
 .like-btn.liked {
     background: #f0ebff;
-    color: #4f46e5;
+    color: #3d34e6;
 }
 
 .comments {
+    width: 100%;
     margin-top: 8px;
 }
 
@@ -199,6 +192,7 @@ body {
 .comment-form {
     display: flex;
     gap: 10px;
+    width: 100%;
     align-items: center;
     margin-bottom: 12px;
 }
@@ -211,21 +205,14 @@ body {
 }
 
 .comment-form input[type="text"],
-.comment-form input,
-.comment-form textarea {
+.comment-form input {
+    width: 100%;
     flex: 1;
     padding: 10px 12px;
     border-radius: 20px;
-    border: 1px solid #e0e6ef;
-    background: #fff;
+    border: 1px solid #dfe4eb;
     font-size: 0.95rem;
     outline: none;
-}
-
-.comment-form input:focus,
-.comment-form textarea:focus {
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.08);
-    border-color: #4f46e5;
 }
 
 .comment-form button {
@@ -262,21 +249,11 @@ body {
     flex-shrink: 0;
 }
 
-/* Comment body bubble */
 .c-body {
-    background: #f7f9fc;
+    display: flex;
+    width: 98%;
+    background: #f0f5fd;
     padding: 10px 12px;
-    border-radius: 10px;
+    border-radius: 20px;
     flex: 1;
-}
-
-.c-head {
-    font-size: 0.9rem;
-    color: #333;
-    margin-bottom: 6px;
-}
-
-.c-text {
-    font-size: 0.98rem;
-    color: #222;
 }

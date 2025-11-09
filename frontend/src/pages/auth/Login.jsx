@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import '../../assets/styles/login_register.css';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext';
+import backgroundImg from '../../assets/images/background.webp'
 
 function Login() {
   const navigate = useNavigate();
+  const { login } = useAuth();
+
   const [selectedRole, setSelectedRole] = useState('User');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleRoleClick = (role) => {
     setSelectedRole(role);
@@ -12,7 +18,17 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: Thêm logic nếu có
+    const roleMap = { User: 'volunteer', Manager: 'manager', Admin: 'admin' };
+    const role = roleMap[selectedRole] || 'volunteer';
+
+    const userObj = {
+      id: Date.now(),
+      name: email ? email.split('@')[0] : 'Người dùng',
+      email,
+      role,
+    };
+
+    login(userObj);
     navigate('/dashboard');
   };
 
@@ -22,17 +38,17 @@ function Login() {
 
   return (
     <div className="login-page">
-      <div className="background-overlay"><img src="" alt="" /></div>
+      <div className="background-overlay"><img src={backgroundImg} alt="" /></div>
       <div className="login-container">
         <h1 className="main-title">VolunteerHub</h1>
         <p className="subtitle">Đăng nhập tài khoản của bạn</p>
 
         <form id="login-form" onSubmit={handleSubmit} noValidate>
           <label htmlFor="email">Email</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
 
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" name="password" required />
+          <input type="password" id="password" name="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
 
           <label className="role-label">Đăng nhập với chức năng:</label>
           <div className="role-selector">

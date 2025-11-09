@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../../assets/styles/event-detail.css'
 
 export default function NewPostForm({ onCreate, relatedTo }) {
   const [title, setTitle] = useState('');
@@ -20,13 +21,13 @@ export default function NewPostForm({ onCreate, relatedTo }) {
   };
 
   return (
-    <form className="new-post-form" onSubmit={submit} style={{ marginBottom: 20 }}>
+    <form className="new-post-form" onSubmit={submit}>
       <input
         type="text"
         placeholder={`Tiêu đề thảo luận`}
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        style={{ width: '100%', padding: 10, borderRadius: 8, marginBottom: 8, border: '1px solid #ddd' }}
+        style={{ width: '98%', padding: 10, borderRadius: 8, marginBottom: 8, border: '1px solid #ddd' }}
       />
 
       <textarea
@@ -34,15 +35,15 @@ export default function NewPostForm({ onCreate, relatedTo }) {
         value={body}
         onChange={(e) => setBody(e.target.value)}
         rows={4}
-        style={{ width: '100%', padding: 10, borderRadius: 8, marginBottom: 8, border: '1px solid #ddd' }}
+        style={{ width: '98%', padding: 10, borderRadius: 8, marginBottom: 8, border: '1px solid #ddd' }}
       />
 
       <input
         type="text"
-        placeholder="Image URL (tùy chọn, ví dụ: /images/xxx.jpg)"
+        placeholder="Image URL (ví dụ: /images/xxx.jpg)"
         value={image}
         onChange={(e) => setImage(e.target.value)}
-        style={{ width: '100%', padding: 10, borderRadius: 8, marginBottom: 8, border: '1px solid #ddd' }}
+        style={{ width: '98%', padding: 10, borderRadius: 8, marginBottom: 8, border: '1px solid #ddd' }}
       />
 
       <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>

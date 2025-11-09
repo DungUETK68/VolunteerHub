@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../../assets/styles/event-detail.css';
 
 export default function CommentForm({ onSubmit, avatar }) {
   const [value, setValue] = useState('');
@@ -12,15 +13,16 @@ export default function CommentForm({ onSubmit, avatar }) {
 
   return (
     <form className="comment-form" onSubmit={submit}>
-      <div className="c-body" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+      <div className="c-body">
         <img className="c-avatar" src={avatar} alt="avatar" />
         <input
           placeholder="Viết bình luận..."
           autoComplete="off"
           value={value}
           onChange={(e) => setValue(e.target.value)}
-          style={{ flex: 1, border: 'none', background: 'transparent', outline: 'none', padding: '6px 0'}}
+          style={{border: 'none', background: 'transparent', outline: 'none', padding: '10px 0'}}
         />
+        
         <button type="submit">Gửi</button>
       </div>
     </form>

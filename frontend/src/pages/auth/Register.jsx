@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../../assets/styles/login_register.css';
 import { useNavigate } from 'react-router-dom';
+import backgroundImg from '../../assets/images/background.webp'
 
 function Register() {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ function Register() {
 
   return (
     <div className="register-page">
-      <div className="background-overlay"></div>
+      <div className="background-overlay"><img src={backgroundImg} alt="" /></div>
       <div className="register-container">
         <h1 className="main-title">VolunteerHub</h1>
         <p className="subtitle">Tạo tài khoản của bạn</p>
