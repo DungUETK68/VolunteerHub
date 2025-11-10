@@ -10,6 +10,8 @@ import History from './pages/volunteer/History';
 import Notification from './pages/volunteer/Notification';
 import EventManagement from './pages/manager/EventManagement';
 import UserList from './pages/admin/UserManagement';
+import EventApproval from './pages/admin/EventApproval';
+import VolunteerApproval from './pages/manager/VolunteerApproval'
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <Route path="/notification" element={<Notification />} />
         <Route path="/manager/events" element={<EventManagement />} />
         <Route path="/admin/users" element={<UserList />} />
+        <Route path="/admin/events" element={<EventApproval />} />
+        <Route path="/manager/volunteers" element={<VolunteerApproval />} />
       </Routes>
     </Router>
     </AuthProvider>

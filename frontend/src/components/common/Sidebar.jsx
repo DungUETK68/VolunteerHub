@@ -18,7 +18,6 @@ function Sidebar() {
     manager: [
       { key: 'dashboard', label: 'Dashboard', icon: '🏠', to: '/dashboard' },
       { key: 'events', label: 'Quản lý sự kiện', icon: '🛠️', to: '/manager/events' },
-      { key: 'accept', label: 'Duyệt thành viên', icon: '📅', to: '/accept' },
       { key: 'VolunteerList', label: 'Danh sách tình nguyện viên', icon: '📋', to: '/volunteerList' },
     ],
     admin: [

@@ -8,6 +8,9 @@ export default function EventManagement() {
   const handleDetail = () => {
     navigate('/eventDetail');
   };
+  const handleApprove = () => {
+    navigate('/manager/volunteers')
+  }
 
   const [events, setEvents] = useState([
     { id: 1, title: "Dọn rác bãi biển", date: "2025-11-20", location: "Đà Nẵng", desc: "Cùng nhau làm sạch bãi biển Mỹ Khê.", status: "upcoming", image: "" },
@@ -16,7 +19,7 @@ export default function EventManagement() {
   ]);
 
   const [activeTab, setActiveTab] = useState("upcoming");
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);  
   const [editingEvent, setEditingEvent] = useState(null);
   const [form, setForm] = useState({ title: '', date: '', location: '', desc: '', status: 'upcoming', image: '' });
 
@@ -112,6 +115,7 @@ export default function EventManagement() {
                       <div className="event-actions">
                         <button className="event-edit-btn" onClick={(e) => handleEdit(e, event)}>Sửa</button>
                         <button className="event-delete-btn" onClick={(e) => handleDelete(e, event.id)}>Xóa</button>
+                        <button className="event-approve-btn" onClick={handleApprove}>Duyệt thành viên</button>
                       </div>
                     )}
                   </div>
