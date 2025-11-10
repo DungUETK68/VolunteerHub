@@ -68,8 +68,22 @@ body {
     color: #fff;
 }
 
+/*----------------------Footer----------------------- */
+.sidebar-footer {
+  text-align: center;
+  font-size: 0.9em;
+  opacity: 0.9;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 12px;
+}
 
-
+.sidebar-footer-sub {
+  font-size: 0.8em;
+  opacity: 0.8;
+  margin-top: 4px;
+  font-style: italic;
+}
+/*----------------------Dashboard-------------------------*/
 .main-content {
     flex: 1;
     padding: 32px 40px;

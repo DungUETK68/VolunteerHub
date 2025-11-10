@@ -5,12 +5,22 @@ import "../../assets/styles/events.css";
 
 export default function EventManagement() {
   const navigate = useNavigate();
+
   const handleDetail = () => {
     navigate('/eventDetail');
   };
+
   const handleApprove = () => {
-    navigate('/manager/volunteers')
-  }
+    navigate('/manager/approve');
+  };
+
+  const handleViewList = () => {
+    navigate('/manager/volunteerList');
+  };
+
+  const handleViewCompleted = () => {
+    navigate('/manager/volunteerCompleted');
+  };
 
   const [events, setEvents] = useState([
     { id: 1, title: "Dọn rác bãi biển", date: "2025-11-20", location: "Đà Nẵng", desc: "Cùng nhau làm sạch bãi biển Mỹ Khê.", status: "upcoming", image: "" },
@@ -19,9 +29,11 @@ export default function EventManagement() {
   ]);
 
   const [activeTab, setActiveTab] = useState("upcoming");
-  const [showModal, setShowModal] = useState(false);  
+  const [showModal, setShowModal] = useState(false);
   const [editingEvent, setEditingEvent] = useState(null);
-  const [form, setForm] = useState({ title: '', date: '', location: '', desc: '', status: 'upcoming', image: '' });
+  const [form, setForm] = useState({
+    title: '', date: '', location: '', desc: '', status: 'upcoming', image: ''
+  });
 
   const filtered = events.filter((e) => e.status === activeTab);
 
@@ -111,13 +123,23 @@ export default function EventManagement() {
                       </span>
                     </div>
 
-                    {event.status === "upcoming" && (
-                      <div className="event-actions">
-                        <button className="event-edit-btn" onClick={(e) => handleEdit(e, event)}>Sửa</button>
-                        <button className="event-delete-btn" onClick={(e) => handleDelete(e, event.id)}>Xóa</button>
-                        <button className="event-approve-btn" onClick={handleApprove}>Duyệt thành viên</button>
-                      </div>
-                    )}
+                    <div className="event-actions">
+                      {event.status === "upcoming" && (
+                        <>
+                          <button className="event-edit-btn" onClick={(e) => handleEdit(e, event)}>Sửa</button>
+                          <button className="event-delete-btn" onClick={(e) => handleDelete(e, event.id)}>Xóa</button>
+                          <button className="event-approve-btn" onClick={handleApprove}>Duyệt thành viên</button>
+                        </>
+                      )}
+
+                      {(event.status === "ongoing") && (
+                        <button className="event-view-btn" onClick={handleViewList}>Xem danh sách</button>
+                      )}
+
+                      {(event.status === "completed") && (
+                        <button className="event-view-btn" onClick={handleViewCompleted}>Xem danh sách</button>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -126,6 +148,7 @@ export default function EventManagement() {
         </main>
       </div>
 
+      {/* MODAL */}
       {showModal && (
         <div
           className="register-overlay"

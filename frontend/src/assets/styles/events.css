@@ -204,7 +204,7 @@ body {
     align-items: center;
 }
 
-.event-join-btn, .event-cancel-btn, .event-edit-btn, .event-delete-btn, .event-approve-btn {
+.event-join-btn, .event-cancel-btn, .event-edit-btn, .event-delete-btn, .event-approve-btn, .event-view-btn {
     display: flex;
     gap: 8px;
     color: #fff;
@@ -217,7 +217,7 @@ body {
     transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
 }
 
-.event-join-btn, .event-edit-btn, .event-approve-btn {
+.event-join-btn, .event-edit-btn, .event-approve-btn, .event-view-btn {
     background: linear-gradient(90deg, #4f46e5 0%, #6d28d9 100%);
 }
 
@@ -225,7 +225,7 @@ body {
     background: linear-gradient(90deg, #e84951 0%, #d92828 100%);
 }
 
-.event-cancel-btn:hover, .event-edit-btn:hover, .event-join-btn:hover, .event-delete-btn:hover, .event-approve-btn:hover {
+.event-cancel-btn:hover, .event-edit-btn:hover, .event-join-btn:hover, .event-delete-btn:hover, .event-approve-btn:hover, .event-view-btn:hover {
     transform: translateY(-2px);
     opacity: 0.98;
 }

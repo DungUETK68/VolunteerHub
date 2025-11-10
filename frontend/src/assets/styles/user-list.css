@@ -119,10 +119,10 @@ body {
   color: #3b82f6;
 }
 
-.actions .lock-btn {
+.actions .lock-btn, .actions .delete {
   color: #dc2626;
 }
 
-.actions .unlock-btn {
+.actions .unlock-btn, .actions .approve {
   color: #16a34a;
 }

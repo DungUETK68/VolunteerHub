@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import "../../assets/styles/user-list.css";
 import Sidebar from "../../components/common/Sidebar";
 
-const VolunteerApprove = () => {
-  const [volunteers, setVolunteers] = useState([
+const VolunteerList = () => {
+  const [volunteers] = useState([
     {
       id: 1,
       name: "Nguyễn Văn A",
       email: "vana@example.com",
       phone: "0123456789",
-      status: "Chờ duyệt",
+      status: "Đã duyệt",
     },
     {
       id: 2,
@@ -18,32 +18,24 @@ const VolunteerApprove = () => {
       phone: "0987654321",
       status: "Đã duyệt",
     },
+    {
+      id: 3,
+      name: "Lê Văn C",
+      email: "levanc@example.com",
+      phone: "0911222333",
+      status: "Đã duyệt",
+    },
   ]);
-
-  // ✅ Duyệt tình nguyện viên
-  const handleApprove = (id) => {
-    setVolunteers((prev) =>
-      prev.map((v) =>
-        v.id === id ? { ...v, status: "Đã duyệt" } : v
-      )
-    );
-    alert("✅ Tình nguyện viên đã được duyệt!");
-  };
-
-  // 🗑️ Xóa tình nguyện viên
-  const handleDelete = (id) => {
-    if (window.confirm("Bạn có chắc muốn xóa tình nguyện viên này không?")) {
-      setVolunteers((prev) => prev.filter((v) => v.id !== id));
-      alert("🗑️ Đã xóa tình nguyện viên.");
-    }
-  };
 
   return (
     <div className="UserManagement-container">
       <Sidebar />
 
       <div className="user-table-container">
-        <h2 style={{ marginBottom: "10px" }}>Phê duyệt tình nguyện viên</h2>
+        <h2 style={{ marginBottom: "10px" }}>
+          Danh sách tình nguyện viên sự kiện đang diễn ra
+        </h2>
+
         <table className="user-table">
           <thead>
             <tr>
@@ -79,33 +71,13 @@ const VolunteerApprove = () => {
                 </td>
 
                 <td>
-                  <span
-                    className={`status-badge ${
-                      vol.status === "Đã duyệt" ? "approved" : "pending"
-                    }`}
-                  >
+                  <span className="status-badge approved">
                     {vol.status}
                   </span>
                 </td>
 
                 <td>
-                  <div className="actions">
-                    {vol.status === "Chờ duyệt" ? (
-                      <button
-                        className="approve"
-                        onClick={() => handleApprove(vol.id)}
-                      >
-                        Duyệt
-                      </button>
-                    ) : (
-                      <button
-                        className="delete"
-                        onClick={() => handleDelete(vol.id)}
-                      >
-                        Xóa
-                      </button>
-                    )}
-                  </div>
+                  <div className="actions">--</div>
                 </td>
               </tr>
             ))}
@@ -116,4 +88,4 @@ const VolunteerApprove = () => {
   );
 };
 
-export default VolunteerApprove;
+export default VolunteerList;

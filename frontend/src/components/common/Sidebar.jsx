@@ -18,7 +18,6 @@ function Sidebar() {
     manager: [
       { key: 'dashboard', label: 'Dashboard', icon: '🏠', to: '/dashboard' },
       { key: 'events', label: 'Quản lý sự kiện', icon: '🛠️', to: '/manager/events' },
-      { key: 'VolunteerList', label: 'Danh sách tình nguyện viên', icon: '📋', to: '/volunteerList' },
     ],
     admin: [
       { key: 'dashboard', label: 'Dashboard', icon: '🏠', to: '/dashboard' },
@@ -38,6 +37,7 @@ function Sidebar() {
       <div className="sidebar-header">
         <h2>VolunteerHub</h2>
       </div>
+
       <nav className="sidebar-nav">
         <ul id="sidebar-tabs">
           {items.map((it) => (
@@ -48,6 +48,11 @@ function Sidebar() {
           ))}
         </ul>
       </nav>
+
+      <div className="sidebar-footer">
+        <p>© 2025 VolunteerHub</p>
+        <p className="sidebar-footer-sub">Kết nối - Cống hiến - Lan tỏa</p>
+      </div>
     </aside>
   );
 }

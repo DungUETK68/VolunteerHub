@@ -12,6 +12,8 @@ import EventManagement from './pages/manager/EventManagement';
 import UserList from './pages/admin/UserManagement';
 import EventApproval from './pages/admin/EventApproval';
 import VolunteerApproval from './pages/manager/VolunteerApproval'
+import VolunteerList from './pages/manager/VolunteerList';
+import VolunteerCompleted from './pages/manager/VolunteerCompleted'
 
 function App() {
   return (
@@ -29,7 +31,9 @@ function App() {
         <Route path="/manager/events" element={<EventManagement />} />
         <Route path="/admin/users" element={<UserList />} />
         <Route path="/admin/events" element={<EventApproval />} />
-        <Route path="/manager/volunteers" element={<VolunteerApproval />} />
+        <Route path="/manager/approve" element={<VolunteerApproval />} />
+        <Route path="/manager/volunteerList" element={<VolunteerList />} />
+        <Route path="/manager/volunteerCompleted" element={<VolunteerCompleted />} />
       </Routes>
     </Router>
     </AuthProvider>

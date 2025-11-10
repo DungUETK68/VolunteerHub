@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../../components/common/Sidebar';
+import Footer from '../common/Footer';
 import '../../assets/styles/home.css';
 
 function Dashboard() {
@@ -17,6 +18,7 @@ function Dashboard() {
       <main className="main-content" id="main-content">
         <header className="main-header">
           <h1>Dashboard</h1>
+
           <div className="user-info">
             <span className="user-avatar">A</span>
             <span className="user-name">User Name</span>
@@ -36,10 +38,12 @@ function Dashboard() {
             <h3>Sự kiện mới được công bố</h3>
             <p>3 sự kiện vừa được công bố</p>
           </div>
+
           <div className="event-card news">
             <h3>Sự kiện có bình luận mới</h3>
             <p>2 sự kiện có bình luận mới</p>
           </div>
+
           <div className="event-card trending">
             <h3>Sự kiện nổi bật</h3>
             <p>+20 tình nguyện viên tham gia</p>
@@ -48,15 +52,18 @@ function Dashboard() {
 
         <section className="event-attract">
           <h2>Các sự kiện nổi trội nhất</h2>
+
           <div className="attract-list">
             <div className="attract-item">
               <h4>Mùa hè xanh</h4>
               <span>+12 members • 5 new posts • 30 likes</span>
             </div>
+
             <div className="attract-item">
               <h4>Biển sạch</h4>
               <span>+8 members • 2 new posts • 18 likes</span>
             </div>
+            
             <div className="attract-item">
               <h4>Hiến máu - Hành trình đỏ</h4>
               <span>+6 members • 3 new posts • 22 likes</span>
