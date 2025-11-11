@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../assets/styles/event-detail.css'
+import '../../assets/styles/event-posts.css'
 
 export default function NewPostForm({ onCreate, relatedTo }) {
   const [title, setTitle] = useState('');

@@ -5,8 +5,8 @@ import Sidebar from "../../components/common/Sidebar";
 
 function EventApproval() {
     const navigate = useNavigate();
-      const handleDetail = () => {
-        navigate('/eventDetail');
+      const handlePosts = () => {
+        navigate('/eventPosts');
       };
 
   const [activeTab, setActiveTab] = useState("pending");
@@ -104,7 +104,7 @@ function EventApproval() {
                 {filteredEvents.map((event) => (
                   <div key={event.id} className="event-card event-admin">
                     <div className="event-title-row">
-                      <a href="#" className="event-title" onClick={handleDetail}>{event.title}</a>
+                      <a href="#" className="event-title" onClick={handlePosts}>{event.title}</a>
                       <span className="event-date">{event.date}</span>
                     </div>
                     <div className="event-location">{event.location}</div>

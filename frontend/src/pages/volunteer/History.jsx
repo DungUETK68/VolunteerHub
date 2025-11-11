@@ -1,14 +1,14 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/common/Sidebar";
 import "../../assets/styles/events.css";
 
 export default function History() {
   const navigate = useNavigate();
-  const handleDetail = () => {
-    navigate('/eventDetail');
-  }
-    
+  const handlePosts = () => {
+    navigate("/eventPosts");
+  };
+
   const events = [
     {
       id: 1,
@@ -42,8 +42,8 @@ export default function History() {
   return (
     <div className="EventsVolunteer-container">
       <Sidebar />
-      <div className="events-container" style={{ padding: 28 }}>
-        <main className="main-content" style={{ width: "100%" }}>
+      <div className="events-container">
+        <main className="main-content">
           <div className="events-header">
             <h2>Sự kiện của tôi</h2>
           </div>
@@ -55,11 +55,7 @@ export default function History() {
               {myEvents.map((event) => (
                 <div key={event.id} className="event-card event-vol">
                   <div className="event-title-row">
-                    <a
-                      href="#"
-                      className="event-title"
-                      onClick={handleDetail()}
-                    >
+                    <a href="#" className="event-title" onClick={handlePosts}>
                       {event.title}
                     </a>
                     <span className="event-date">{event.date}</span>
@@ -70,21 +66,15 @@ export default function History() {
 
                   <div className="event-tags">
                     <span className={`event-status ${event.status}`}>
-                      {event.status === "upcoming"
-                        ? "Sắp diễn ra"
-                        : event.status === "ongoing"
-                        ? "Đang diễn ra"
+                      {event.status === "upcoming" ? "Sắp diễn ra"
+                        : event.status === "ongoing" ? "Đang diễn ra"
                         : "Đã hoàn thành"}
                     </span>
                   </div>
 
                   <div className="event-actions" style={{ marginTop: 12 }}>
                     {event.status === "upcoming" && (
-                      <button
-                        className="event-cancel-btn"
-                        onClick={(e) => e.preventDefault()}
-                        type="button"
-                      >
+                      <button className="event-cancel-btn" onClick={(e) => e.preventDefault()} type="button">
                         Hủy tham gia
                       </button>
                     )}

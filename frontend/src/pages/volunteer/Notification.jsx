@@ -10,8 +10,8 @@ export default function Notification() {
   return (
     <div className="EventsVolunteer-container">
       <Sidebar />
-      <div className="events-container" style={{ padding: 28 }}>
-        <main className="main-content" style={{ width: '100%' }}>
+      <div className="events-container">
+        <main className="main-content">
           <div className="events-header">
             <h2>Thông báo</h2>
           </div>

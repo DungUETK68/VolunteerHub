@@ -12,7 +12,7 @@ function Sidebar() {
     volunteer: [
       { key: 'dashboard', label: 'Dashboard', icon: '🏠', to: '/dashboard' },
       { key: 'events', label: 'Sự kiện', icon: '📅', to: '/events' },
-      { key: 'my-events', label: 'Sự kiện của tôi', icon: '📋', to: '/history' },
+      { key: 'my-events', label: 'Lịch sử tham gia', icon: '📋', to: '/history' },
       { key: 'notifications', label: 'Thông báo', icon: '🔔', to: '/notification' },
     ],
     manager: [

@@ -7,8 +7,6 @@ body {
 .EventsVolunteer-container, .EventApproval-container {
     display: flex;
     min-height: 100vh;
-    height: 100vh;
-    overflow: hidden;
 }
 
 .events-container {
@@ -16,11 +14,13 @@ body {
     flex: 1;
     min-height: 0;
     overflow: auto;
-    padding: 28px;
+    flex-direction: column;
 }
 
 .main-content {
   width: 100%;
+  margin-left: 280px;
+  max-width: 1150px;
 }
 
 .events-header-row {
@@ -125,6 +125,7 @@ body {
 }
 
 .event-title {
+    font-family: Arial;
     font-size: 1.2em;
     font-weight: 800;
     color: #4f46e5;

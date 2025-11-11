@@ -6,8 +6,8 @@ import "../../assets/styles/events.css";
 export default function EventManagement() {
   const navigate = useNavigate();
 
-  const handleDetail = () => {
-    navigate('/eventDetail');
+  const handlePosts = () => {
+    navigate('/eventPosts');
   };
 
   const handleApprove = () => {
@@ -108,7 +108,7 @@ export default function EventManagement() {
                 {filtered.map((event) => (
                   <div key={event.id} className="event-card event-vol">
                     <div className="event-title-row">
-                      <a href="#" className="event-title" onClick={handleDetail}>{event.title}</a>
+                      <a href="#" className="event-title" onClick={handlePosts}>{event.title}</a>
                       <span className="event-date">{event.date}</span>
                     </div>
                     <div className="event-location">{event.location}</div>

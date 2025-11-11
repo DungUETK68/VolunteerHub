@@ -9,14 +9,12 @@ const VolunteerList = () => {
     { id: 3, name: "Lê Văn C", email: "levanc@example.com", phone: "0911222333", status: "Đã duyệt", completed: false },
   ]);
 
-  // ✅ Khi người dùng tick checkbox
   const handleCheckboxChange = (id) => {
     setVolunteers((prev) =>
       prev.map((v) => (v.id === id ? { ...v, completed: !v.completed } : v))
     );
   };
 
-  // ✅ Khi người dùng nhấn nút Lưu
   const handleSave = () => {
     const completedVolunteers = volunteers.filter((v) => v.completed);
     if (completedVolunteers.length === 0) {
@@ -90,7 +88,6 @@ const VolunteerList = () => {
           </tbody>
         </table>
 
-        {/* ✅ Nút lưu dưới bảng */}
         <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 16 }}>
           <button
             className="save-btn"

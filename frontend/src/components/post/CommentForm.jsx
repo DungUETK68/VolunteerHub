@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../assets/styles/event-detail.css';
+import '../../assets/styles/event-posts.css';
 
 export default function CommentForm({ onSubmit, avatar }) {
   const [value, setValue] = useState('');
@@ -13,7 +13,7 @@ export default function CommentForm({ onSubmit, avatar }) {
 
   return (
     <form className="comment-form" onSubmit={submit}>
-      <div className="c-body">
+      <div className="comment-body">
         <img className="c-avatar" src={avatar} alt="avatar" />
         <input
           placeholder="Viết bình luận..."
